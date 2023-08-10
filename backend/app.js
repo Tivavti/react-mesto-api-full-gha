@@ -18,7 +18,7 @@ const error = require('./middlewares/err');
 const { login, createUser } = require('./controllers/users');
 const { loginValidation, createUserValidation } = require('./middlewares/validation');
 
-const { PORT, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const app = express();
 
 app.use(cookies());
@@ -39,7 +39,7 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-app.use({ requestLogger });
+app.use(requestLogger);
 
 app.post('/signin', loginValidation, login);
 app.post('/signup', createUserValidation, createUser);
@@ -49,7 +49,7 @@ app.use(userRouter);
 app.use(cardRouter);
 
 app.use('/*', (_req, _res, next) => next(new NotFoundError('Страница не найдена')));
-app.use({ errorLogger });
+app.use(errorLogger);
 
 app.use(errors());
 app.use(error);
