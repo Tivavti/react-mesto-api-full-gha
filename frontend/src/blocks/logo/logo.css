@@ -1,0 +1,22 @@
+.logo {
+max-width: 142px;
+width: 100%;
+}
+
+@media screen and (max-width: 936px) {
+  .logo {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    max-width: 103.74px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    padding-left: 0;
+  }
+}

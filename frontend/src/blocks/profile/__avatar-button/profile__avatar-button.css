@@ -1,0 +1,31 @@
+.profile__avatar-button {
+  grid-row: span 2;
+  position: relative;
+  background-color: #000;
+  border: 0;
+}
+
+@media screen and (max-width: 936px) {
+  .profile__avatar-button {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+.profile__avatar-button::before {
+  content: url('../../../images/avatar-button.svg');
+  width: 26px;
+  height: 26px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.5s linear;
+}
+
+.profile__avatar-button:hover:before {
+  opacity: 1;
+}

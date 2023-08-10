@@ -1,0 +1,9 @@
+.element {
+  display: grid;
+  grid-template-columns: 220px 62px;
+  grid-template-rows: 282px 39.5px 39.5px;
+  border-radius: 10px;
+  background-color: #fff;
+  justify-content: center;
+  position: relative;
+}

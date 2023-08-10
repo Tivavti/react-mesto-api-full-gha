@@ -1,0 +1,10 @@
+.element__quantity-likes {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.2em;
+  align-self: start;
+  justify-self: center;
+  padding-top: 3px;
+  margin: 0;
+  color: #000;
+}

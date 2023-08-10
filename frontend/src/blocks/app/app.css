@@ -1,0 +1,6 @@
+.app {
+  background: #000;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
