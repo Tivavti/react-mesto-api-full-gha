@@ -18,7 +18,7 @@ const error = require('./middlewares/err');
 const { login, createUser } = require('./controllers/users');
 const { loginValidation, createUserValidation } = require('./middlewares/validation');
 
-const { PORT, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const app = express();
 
 app.use(cookies());
@@ -28,7 +28,7 @@ mongoose.connect(DB_URL);
 app.use(helmet());
 app.disable('x-powered-by');
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: ['https://mesto.irakot.nomoreparties.co', 'http://mesto.irakot.nomoreparties.co', 'http://localhost:3001'], credentials: true }));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,

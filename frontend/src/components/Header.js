@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import logoPath from '../images/logo.svg'
 
-function Header({ setLoggedIn, userEmail, handleLogout }) {
+function Header({ userEmail, handleLogout }) {
 
   return (
     <header className="header">

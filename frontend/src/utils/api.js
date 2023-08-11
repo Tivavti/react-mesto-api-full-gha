@@ -102,7 +102,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://mesto.irakot.nomoreparties.co',
   headers: {
     "Content-Type": "application/json"
   }
