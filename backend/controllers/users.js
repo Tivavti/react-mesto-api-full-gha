@@ -21,7 +21,7 @@ const login = async (req, res, next) => {
     const payload = { _id: user._id, email: user.email };
     const token = generateToken(payload);
     res.cookie('jwt', token, {
-      maxAge: 654800,
+      maxAge: 6548000,
       httpOnly: true,
       sameSite: true,
     });
