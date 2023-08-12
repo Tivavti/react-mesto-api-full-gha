@@ -11,6 +11,6 @@
 
 IP-адрес 158.160.77.220
 
-Frontend https://mesto.irakot.nomoreparties.cohttps://...
+Frontend https://mesto.irakot.nomoreparties.co
 
 Backend https://api.mesto.irakot.nomoreparties.co
