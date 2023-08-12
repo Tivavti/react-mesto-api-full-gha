@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'dev-secret';
+const JWT_SECRET = process.env.PROD === 'production' ? process.env.JWT_SECRET : 'dev-secret';
 
 function generateToken(payload) {
-  return jwt.sign(payload, process.env.NODE_ENV !== 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
+  return jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' });
 }
 
 function checkToken(token) {
@@ -12,7 +12,7 @@ function checkToken(token) {
   }
 
   try {
-    return jwt.verify(token, process.env.NODE_ENV !== 'production' ? JWT_SECRET : 'dev-secret');
+    return jwt.verify(token, JWT_SECRET);
   } catch (err) {
     return false;
   }
