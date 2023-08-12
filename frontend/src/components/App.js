@@ -165,13 +165,16 @@ function App() {
 
   function handleLogin(email, password) {
     auth.authorize(email, password)
-      .then((data) => {
+      .then((res) => {
+        setSuccess(true);
         setLoggedIn(true);
         setUserEmail(email)
+        setCurrentUser(res.user)
         navigate("/", { replace: true })
       })
       .catch((e) => {
-        setLoggedIn(false);;
+        setSuccess(false);
+        setLoggedIn(false);
         handleInfoTooltip();
       });
   }

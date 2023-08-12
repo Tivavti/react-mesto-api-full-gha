@@ -38,9 +38,9 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use(limiter);
-
 app.use(requestLogger);
+
+app.use(limiter);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
