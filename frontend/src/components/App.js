@@ -165,11 +165,10 @@ function App() {
 
   function handleLogin(email, password) {
     auth.authorize(email, password)
-      .then((res) => {
+      .then(() => {
         setSuccess(true);
         setLoggedIn(true);
         setUserEmail(email)
-        setCurrentUser(res.user)
         navigate("/", { replace: true })
       })
       .catch((e) => {
